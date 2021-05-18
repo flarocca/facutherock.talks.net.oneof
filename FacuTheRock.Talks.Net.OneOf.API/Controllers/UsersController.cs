@@ -40,6 +40,22 @@ namespace FacuTheRock.Talks.Net.OneOf.API.Controllers
 
         #region V2
 
+        #region Pros & Cons
+
+        /* ****************************************
+         * PROS:
+         *   - Mecanismo provisto por el framework
+         *   - Single Responsibility Principle
+         *   - Solución conocida
+         * 
+         * Cons:
+         *   - Reglas de negocio en la API
+         *   - Reglas de negocio como excepciones
+         * 
+         * ****************************************/
+
+        #endregion
+
         [HttpPost("v2")]
         public IActionResult AddV2([FromBody] User userRequest)
         {

@@ -24,6 +24,24 @@ namespace FacuTheRock.Talks.Net.OneOf.API.Services
             return user;
         }
 
+        #region V3
+
+        #region Pros & Cons
+
+        /* ****************************************
+         * PROS:
+         *   - Mecanismo provisto por el framework
+         *   - Single Responsibility Principle
+         *   - Solución conocida
+         * 
+         * Cons:
+         *   - Reglas de negocio en la API
+         *   - Reglas de negocio como excepciones
+         * 
+         * ****************************************/
+
+        #endregion
+
         public OneOf<User, UserAlreadyExistsBusinessException, InvalidUserNameBusinessException> AddV3(User user)
         {
             if (users.ContainsKey(user.Id))
@@ -36,6 +54,8 @@ namespace FacuTheRock.Talks.Net.OneOf.API.Services
 
             return user;
         }
+
+        #endregion
 
         public IReadOnlyCollection<User> GetAll() =>
                 users.Select(item => item.Value).ToList();
